@@ -50,20 +50,17 @@ export default function AddingModal() {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        if (newTask.title !== '' && newTask.duration !== '') {
-            setTasks([...tasks, newTask]);
-            localStorage.setItem('todos', JSON.stringify([...tasks, newTask]));
+        setTasks([...tasks, newTask]);
+        localStorage.setItem('todos', JSON.stringify([...tasks, newTask]));
 
-            setNewTask({
-                id: '',
-                title: '',
-                duration: '',
-                finished: false,
-            });
+        setNewTask({
+            id: '',
+            title: '',
+            duration: '',
+            finished: false,
+        });
 
-            showToast('Added successed.')
-            
-        }
+        showToast('Added successed.')
     }
 
     return (
